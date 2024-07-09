@@ -21,4 +21,4 @@ async def post_form(request: Request, text: str = Form(...)):
     return templates.TemplateResponse("form.html", {"request": request, "result": result, "text": text})
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000, log_level="info")
+    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
