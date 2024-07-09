@@ -21,4 +21,4 @@ COPY . .
 EXPOSE 8000
 
 # Définir la commande par défaut pour lancer l'application
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app:app", "--host", "127.0.0.1", "--port", "8000"]
