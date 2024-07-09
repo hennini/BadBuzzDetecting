@@ -9,6 +9,7 @@ app = FastAPI()
 # Dossier pour les templates
 templates = Jinja2Templates(directory="templates")
 
+
 # Page HTML principale
 @app.get("/", response_class=HTMLResponse)
 async def get_form(request: Request):
