@@ -3,7 +3,6 @@
 FROM python:3.9-slim
 
 # Permettre l'affichage immédiat des instructions et messages de log dans les journaux de Knative
-ENV PYTHONUNBUFFERED True
 
 # Définir le répertoire de travail
 WORKDIR /app
@@ -12,13 +11,12 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Installer les dépendances nécessaires
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Copier tout le contenu du répertoire local dans le conteneur
-COPY . .
+COPY . /app
 
 # Exposer le port sur lequel l'application va fonctionner
-EXPOSE 8000
 
 # Définir la commande par défaut pour lancer l'application
-CMD ["uvicorn", "app:app", "--host", "127.0.0.1", "--port", "8000"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000","--reload"]
