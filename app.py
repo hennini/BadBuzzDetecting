@@ -4,6 +4,8 @@ from sentiment_analysis import analyze_sentiment  # Importer la fonction depuis 
 
 app = Flask(__name__)
 
+
+
 # Dossier pour les templates
 app.template_folder = "templates"
 
