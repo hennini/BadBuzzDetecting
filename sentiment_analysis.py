@@ -5,7 +5,7 @@ def analyze_sentiment(text):
     """
     Analyse le sentiment du texte donné.
     Retourne 'positif', 'négatif' ou 'neutre'.
-    a changer par un autre modele
+    a changer par un autre modele deuxieme test
     """
     blob = TextBlob(text)
     polarity = blob.sentiment.polarity
